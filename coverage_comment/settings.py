@@ -52,6 +52,7 @@ class Config:
     ANNOTATE_MISSING_LINES: bool = False
     ANNOTATION_TYPE: str = "warning"
     VERBOSE: bool = False
+    DIFF_SUBMODULES: bool = True
     # Only for debugging, not exposed in the action:
     FORCE_WORKFLOW_RUN: bool = False
 

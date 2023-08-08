@@ -337,6 +337,9 @@ jobs:
     # Please make sure that this branch is not protected.
     COVERAGE_DATA_BRANCH: python-coverage-comment-action-data
 
+    # If true, will include submodules in coverage diff for pull requests
+    DIFF_SUBMODULES: true
+
     # Deprecated, see https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging
     VERBOSE: false
 ```

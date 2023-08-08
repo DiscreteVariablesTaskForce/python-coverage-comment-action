@@ -77,7 +77,8 @@ def action(
         )
         if event_name == "pull_request":
             diff_coverage = coverage_module.get_diff_coverage_info(
-                base_ref=config.GITHUB_BASE_REF, coverage_path=config.COVERAGE_PATH
+                base_ref=config.GITHUB_BASE_REF, coverage_path=config.COVERAGE_PATH,
+                diff_submodules=config.DIFF_SUBMODULES
             )
             if config.ANNOTATE_MISSING_LINES:
                 annotations.create_pr_annotations(

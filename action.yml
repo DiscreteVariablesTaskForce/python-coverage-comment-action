@@ -71,6 +71,10 @@ inputs:
       notice, warning and error as annotation type. For more information look here:
       https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-a-notice-message
     default: warning
+  DIFF_SUBMODULES:
+    description: >
+      If true, will include submodules in coverage diff for pull requests.
+    default: true
   VERBOSE:
     description: >
       Deprecated, see https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging
@@ -96,4 +100,5 @@ runs:
     MERGE_COVERAGE_FILES: ${{ inputs.MERGE_COVERAGE_FILES }}
     ANNOTATE_MISSING_LINES: ${{ inputs.ANNOTATE_MISSING_LINES }}
     ANNOTATION_TYPE: ${{ inputs.ANNOTATION_TYPE }}
+    DIFF_SUBMODULES: ${{ inputs.DIFF_SUBMODULES }}
     VERBOSE: ${{ inputs.VERBOSE }}

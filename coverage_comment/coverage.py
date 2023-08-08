@@ -209,8 +209,11 @@ def extract_info(data: dict, coverage_path: pathlib.Path) -> Coverage:
     )
 
 
-def get_diff_coverage_info(base_ref: str, coverage_path: pathlib.Path) -> DiffCoverage:
-    subprocess.run("git", "fetch", "--depth=1000", path=pathlib.Path.cwd())
+def get_diff_coverage_info(base_ref: str, coverage_path: pathlib.Path, diff_submodules: bool) -> DiffCoverage:
+    if diff_submodules:
+        subprocess.run("git", "fetch", "--depth=1000", path=pathlib.Path.cwd())
+    else:
+        subprocess.run("git", "fetch", path=pathlib.Path.cwd())
     subprocess.run("coverage", "xml", path=coverage_path)
     with tempfile.NamedTemporaryFile("r") as f:
         subprocess.run(
